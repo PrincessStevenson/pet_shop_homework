@@ -76,32 +76,48 @@ class TestPetShop(unittest.TestCase):
         }
 
     def test_pet_shop_name(self):
+        # Have a name variable, set it's value to be the result of the 
+        # function call "get_pet_shop_name()". This function takes in self.cc_pet_shop as an argument.
+        # if starts with a variable like name = then a return function is needed!!!
+        # 1: Function will only take 1 parameter
+        # 2: Datatype of the paramenter will be: dict
         name = get_pet_shop_name(self.cc_pet_shop)
+        # Name must be equal to "Camelot of Pets"
         self.assertEqual("Camelot of Pets", name)
 
-    @unittest.skip("delete this line to run the test")
+    # @unittest.skip("delete this line to run the test")
     def test_total_cash(self):
+        # I set up a variable called sum, its value will be the return value 
+        # of the function call "get_total_cash()", takes 1 argument,
+        # argument is going to be the cc_pet_shop dict
         sum = get_total_cash(self.cc_pet_shop)
+        # we check if the return value is 1000
         self.assertEqual(1000, sum)
 
-    @unittest.skip("delete this line to run the test")
+    # @unittest.skip("delete this line to run the test")
     def test_add_or_remove_cash__add(self):
+        # I call a function called add_or_remove_cash
+        # arguments are: the pet_shop dict and 10
         add_or_remove_cash(self.cc_pet_shop,10)
+        # then I reate a cash varible, its value is
+        # the return value of get_total_cash(), argument is cc_pet_shop
+        # When there is no = sign left to the function call,
+        # it doesn't need to return anything
         cash = get_total_cash(self.cc_pet_shop)
         self.assertEqual(1010, cash)
 
-    @unittest.skip("delete this line to run the test")
+    # @unittest.skip("delete this line to run the test")
     def test_add_or_remove_cash__remove(self):
         add_or_remove_cash(self.cc_pet_shop,-10)
         cash = get_total_cash(self.cc_pet_shop)
         self.assertEqual(990, cash)
 
-    @unittest.skip("delete this line to run the test")
+    # @unittest.skip("delete this line to run the test")
     def test_pets_sold(self):
         sold = get_pets_sold(self.cc_pet_shop)
         self.assertEqual(0, sold)
 
-    @unittest.skip("delete this line to run the test")
+    # @unittest.skip("delete this line to run the test")
     def test_increase_pets_sold(self):
         increase_pets_sold(self.cc_pet_shop,2)
         sold = get_pets_sold(self.cc_pet_shop)
@@ -114,7 +130,13 @@ class TestPetShop(unittest.TestCase):
 
     @unittest.skip("delete this line to run the test")
     def test_all_pets_by_breed__found(self):
+        # Set up pets, its value should be the return value
+        # of the function "get_pets_by_breed()"
+        # 2 arguments that are the pet_shop dict and the string
+        # British Shorthair
+        # because pets is plural, I assume it needs to be a list
         pets = get_pets_by_breed(self.cc_pet_shop, "British Shorthair")
+        # the length of said list should be 2
         self.assertEqual(2, len(pets))
 
     @unittest.skip("delete this line to run the test")
